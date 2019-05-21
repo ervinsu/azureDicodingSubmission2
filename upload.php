@@ -10,8 +10,8 @@ use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
 
 function uploadFile($fileName,$filepathToUpload){
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=".getenv('ervinsazurestorage').";AccountKey=".getenv('IiJHCdHDjiXnYkwNgl/Hb/nVfdTse3i2MCxUln/JiaoQNogkSPzEEkEc8sxBJuBRqbW1l8icCgTeVFbURPioKA==');
-
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=".getenv('ACCOUNT_NAME').";AccountKey=".getenv('ACCOUNT_KEY');
+	echo getenv('ACCOUNT_NAME')."WTFF";
 	// Create blob client.
 	$blobClient = BlobRestProxy::createBlobService($connectionString);
  	// Create container options object.

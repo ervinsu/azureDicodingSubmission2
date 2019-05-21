@@ -17,7 +17,7 @@ Image to analyze:
 <br>
 <form action="index.php?Uploaded" method="POST" enctype="multipart/form-data">
   <input type="file" name="pic" accept="image/*">
-  <input type="submit">
+  <input type="Analyze image">
 </form>
 
 
@@ -137,9 +137,7 @@ Image to analyze:
 				</script>  -->
 		    <?php
 		}else{
-			if(isset($_GET["pic"]))?>
-				<script type="text/javascript">alert("why");</script>
-				<?php
+			if(isset($_GET["pic"]))
 						// echo basename($_FILES['pic']['name']);
 						$target = 'uploads/'.basename($_FILES['pic']['name']);
 						$tempfile = str_replace("\\","/", $_FILES['pic']['tmp_name']) ;
@@ -150,7 +148,7 @@ Image to analyze:
 						// alert(pictaken);
 						// showImageJS(pictaken);
 						var picUploaded = "<?php echo $Linknya?>";
-						alert(picUploaded);
+						// alert(picUploaded);
 						processImage(picUploaded);
 					</script>
 			<?php

@@ -8,7 +8,7 @@
 <body>
 
 <h1>Analyze image:</h1>
-Choose the image to be analyzed, then click the <strong>Analyze image</strong> button.
+Choose the image to be analyzed, then click the <strong>Submit</strong> button.
 <br><br>
 Image to analyze:
 <!-- <input type="text" name="inputImage" id="inputImage"
@@ -17,7 +17,7 @@ Image to analyze:
 <br>
 <form action="index.php?Uploaded" method="POST" enctype="multipart/form-data">
   <input type="file" name="pic" accept="image/*">
-  <input type="Analyze image">
+  <input type="submit">
 </form>
 
 

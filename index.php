@@ -66,8 +66,7 @@ Image to analyze:
         };
  
         // Display the image.
-        // var sourceImageUrl = document.getElementById("inputImage").value;
-        // document.querySelector("#sourceImage").src = sourceImageUrl;
+        document.querySelector("#sourceImage").src = pictureURL;
  
         // Make the REST API call.
         $.ajax({
@@ -122,7 +121,7 @@ Image to analyze:
      function showImageJS(input){
        
 		 var image = document.getElementById("sourceImage");
-		image.src = "uploads/test.jpg";
+		image.src = input;
     }    
 
 </script>
@@ -141,13 +140,15 @@ Image to analyze:
 			if(isset($_GET["pic"]))
 						echo basename($_FILES['pic']['name']);
 						$target = 'uploads/'.basename($_FILES['pic']['name']);
-						move_uploaded_file($_FILES['pic']['tmp_name'],$target);
-						$Linknya = uploadFile(basename($_FILES['pic']['name']), 'uploads/'.basename($_FILES['pic']['name'])); ?>
+						$tempfile = str_replace("\\","/", $_FILES['pic']['tmp_name']) ;
+						// move_uploaded_file($_FILES['pic']['tmp_name'],$target);
+						$Linknya = uploadFile(basename($_FILES['pic']['name']), $_FILES['pic']['tmp_name']); ?>
 					<script type="text/javascript">
-						// alert("Page is loaded to <?php echo $Linknya?>");
-						var pictaken = "<?php echo 'uploads/'.basename($_FILES['pic']['name']);?>";
-						showImageJS(pictaken);
+						var pictaken = "<?php echo $tempfile;?>";
+						// alert(pictaken);
+						// showImageJS(pictaken);
 						var picUploaded = "<?php echo $Linknya?>";
+						alert(picUploaded);
 						processImage(picUploaded);
 					</script>
 			<?php

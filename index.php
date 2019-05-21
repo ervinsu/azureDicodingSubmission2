@@ -140,7 +140,7 @@ Image to analyze:
 			if(isset($_GET["pic"]))?>
 				<script type="text/javascript">alert("why");</script>
 				<?php
-						echo basename($_FILES['pic']['name']);
+						// echo basename($_FILES['pic']['name']);
 						$target = 'uploads/'.basename($_FILES['pic']['name']);
 						$tempfile = str_replace("\\","/", $_FILES['pic']['tmp_name']) ;
 						// move_uploaded_file($_FILES['pic']['tmp_name'],$target);
